@@ -1,7 +1,7 @@
 ## DataScienceG
 ## Put comments here that give an overall description of what your
 ## functions do 
-## Example to call this function:
+## Examples to call this function:
 ## cacheSolve(makeCacheMatrix(matrix(c(2,4,3,1,5,7,4,5,8),nrow=3,ncol=3,byrow=TRUE)))
 ## cacheSolve(makeCacheMatrix(matrix(c(2,4,3,1),nrow=2,ncol=2,byrow=TRUE)))
 ## Example to solve if Det=0, there is no inverse matrix
@@ -36,10 +36,12 @@ cacheSolve <- function(x, ...) {
     return(inv)
   }
   data <- x$get()
+  ## First check if Determinant is not 0
   detInv<-det(data)
   if (detInv==0){message("Determinant is zero, no inverse matrix")
                 
   }
+  ## if not then find inverse matrix
   else
   {
     inv <- solve(data,)
